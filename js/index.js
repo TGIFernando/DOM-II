@@ -16,7 +16,7 @@ let navLink = document.querySelectorAll('nav a');
 let navBar = document.querySelector('.main-navigation');
 let mainPics = document.querySelectorAll('.img-content');
 let mainBody = document.querySelector('body');
-
+let mainTitles = document.querySelectorAll('.text-content h2');
 //sign in button effects
 signButtn.forEach(bttn => bttn.addEventListener('mouseover', () => {
     bttn.style.backgroundColor = 'red';
@@ -36,7 +36,7 @@ navLink.forEach(bttn => bttn.addEventListener('click', (event) => {
 navBar.addEventListener('mousemove', () => {
     navBar.style.backgroundColor = 'blue';
 });
-navBar.addEventListener('mouseleave', () => {
+mainBody.addEventListener('mouseup', () => {
     navBar.style.backgroundColor = "white";
 });
 
@@ -46,7 +46,7 @@ mainPics.forEach(pic => pic.addEventListener('dblclick', () => {
     pic.style.border = '2px solid red';
     pic.style.borderRadius = '10px';
 }));
-mainPics.forEach(pic => pic.addEventListener('mouseleave', () => {
+mainPics.forEach(pic => pic.addEventListener('contextmenu', () => {
     pic.style.opacity = '100%';
     pic.style.border = 'none';
 }));
@@ -55,3 +55,11 @@ mainPics.forEach(pic => pic.addEventListener('mouseleave', () => {
 mainBody.addEventListener('keydown', () => {
     mainBody.style.backgroundColor = '#0099cc';
 });
+
+//hover and underline shall appear
+mainTitles.forEach(title => title.addEventListener('mouseenter', () => {
+    title.style.textDecoration = "underline";
+}));
+mainTitles.forEach(title => mainBody.addEventListener('wheel', () => {
+    title.style.textDecoration = 'none';
+}))
